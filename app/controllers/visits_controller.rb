@@ -6,7 +6,7 @@ class VisitsController < ApplicationController
 	end
 
 	def show
-		location = Location.find(params[:location_id])
+		@location = Location.find(params[:location_id])
 		@visit = Visit.find(params[:id])
 		render plain: "You try to cheat", status: 404 if @visit.location_id != params[:location_id].to_i
 	rescue ActiveRecord::RecordNotFound
@@ -28,6 +28,12 @@ class VisitsController < ApplicationController
 			@errors = @visit.errors.full_messages
 			render 'new'
 		end
+	end
+
+	def destroy
+		@location = Location.find(params[:location_id])
+		visit = @location.visits.find(params[:id]).destroy
+		redirect_to action: 'index'
 	end
 
 	private

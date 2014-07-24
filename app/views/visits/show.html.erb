@@ -2,6 +2,11 @@
 Visit <%= @visit.id %> - Location <%= @visit.location_id %><br>
 Visited by: <%= @visit.user_name %>
 <br>
+
+<button>
+	<%= link_to "Delete", location_visit_path(@visit.location, :id => @visit.id), method: 'delete', confirm: 'Are you sure?' %>
+</button>
+
 <button>
 <%= link_to "Go back to Visits", location_visits_path(@visit.location_id) %>
 </button>
