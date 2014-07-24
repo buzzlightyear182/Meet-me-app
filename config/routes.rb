@@ -13,6 +13,8 @@ resources :locations do
   resources :visits
 end
 
+resources :users
+
 # get 'locations' => 'locations#index'
 # get 'locations/:id' => 'locations#show'
 
