@@ -3,7 +3,7 @@ class Visit < ActiveRecord::Base
 
 	validates :from_date, presence: true
 	validates :to_date, presence: true
-	validates :user_name, presence: true, format: {with: /\A[a-zA-Z]+\z/} #alphanumeric regex
+	validates :user_id, presence: true, numericality: true
 	validates :location_id, presence: true, numericality: true
 	validate :from_date_is_in_future
 	validate :from_date_before_to_date

@@ -21,11 +21,11 @@ user3 = User.create user_name:"Kristian", password: '123', email: "kristiankyvik
 user4 = User.create user_name:"Ben", password: '123', email: "bentarenne@gmail.com"
 user5 = User.create user_name:"Cat", password: '123', email: "cat1788@gmail.com"
 
-Visit.create location_id: location1.id, user_name: user1.id, from_date: Date.today+12, to_date: Date.today+14
-Visit.create location_id: location2.id, user_name: user1.id, from_date: Date.today, to_date: Date.today+2
-Visit.create location_id: location2.id, user_name: user2.id, from_date: Date.today, to_date: Date.today+5
-Visit.create location_id: location3.id, user_name: user3.id, from_date: Date.today+3, to_date: Date.today+10
-Visit.create location_id: location4.id, user_name: user4.id, from_date: Date.today+5, to_date: Date.today+12
+Visit.create location_id: location1.id, user_id: user1.id, from_date: Date.today+12, to_date: Date.today+14
+Visit.create location_id: location2.id, user_id: user1.id, from_date: Date.today, to_date: Date.today+2
+Visit.create location_id: location2.id, user_id: user2.id, from_date: Date.today, to_date: Date.today+5
+Visit.create location_id: location3.id, user_id: user3.id, from_date: Date.today+3, to_date: Date.today+10
+Visit.create location_id: location4.id, user_id: user4.id, from_date: Date.today+5, to_date: Date.today+12
 # Visit.create location_id: 6, user_name: "Xavier", from_date: Date.today, to_date: Date.today+3
 # Visit.create location_id: 9, user_name: "Sergio", from_date: Date.today, to_date: Date.today+2
 # Visit.create location_id: 9, user_name: "Nick", from_date: Date.today, to_date: Date.today+2
