@@ -8,19 +8,23 @@
 			Location ID <%= visit.location_id %> -
 		<% end %>
 		Username <%= visit.user_name %>
-		<button>
+		<button class = 'visits'>
 		<%= link_to "Go to visit", location_visit_path(:id => visit.id)%>
 	</button>
 
-	<button>
+	<button class ='delete'>
 		<%= link_to "Delete", location_visit_path(@location, visit), method: 'delete', confirm: 'Are you sure?' %>
+	</button>
+
+	<button class ='edit'>
+		<%= link_to "Edit", edit_location_visit_path(:id => visit.id), method: 'get' %>
 	</button>
 
 		</li>
 		<% end %>
 	</ul>
 
-<button>
+<button class = 'locations'>
 <%= link_to "Back to Locations", locations_path %>
 </button>
 

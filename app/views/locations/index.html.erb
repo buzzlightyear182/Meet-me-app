@@ -4,13 +4,13 @@
 	<% @locations.each do |location| %>
 	<li>
 		<% if location.name.present? %>
-			<%= location.name %> - 
+			<%= location.name %> -
 		<% end %>
 		<%= location.city %>
-		<button>
+		<button class = 'visits'>
 			<%= link_to "See Visits", location_visits_path(location.id) %>
 		</button>
-		<button>
+		<button class = 'locations'>
 	<%= link_to "Check-out Location", location_path(location.id)%>
 </button>
 

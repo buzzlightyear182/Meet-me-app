@@ -1,16 +1,19 @@
 <h1>Visit</h1>
-Visit <%= @visit.id %> - Location <%= @visit.location_id %><br>
+Visit <%= @visit.id %> - Location <%= @visit.location_id %> - 
 Visited by: <%= @visit.user_name %>
-<br>
-
-<button>
+<br/>
+<button class='delete'>
 	<%= link_to "Delete", location_visit_path(@visit.location, :id => @visit.id), method: 'delete', confirm: 'Are you sure?' %>
 </button>
 
-<button>
+<button class ='edit'>
+	<%= link_to "Edit", edit_location_visit_path(:id => @visit.id), method: 'get' %>
+</button>
+
+<button class='visits'>
 <%= link_to "Go back to Visits", location_visits_path(@visit.location_id) %>
 </button>
 
-<button>
+<button class='locations'>
 <%= link_to "Go back to Location", location_path(@visit.location_id) %>
 </button>

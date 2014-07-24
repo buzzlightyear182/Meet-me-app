@@ -3,11 +3,11 @@
 <%= @location.city %>, <%= @location.country%>
 <br/>
 <br/>
-<button>
+<button class ='visits'>
 	<%= link_to "See Visits", location_visits_path(@location.id) %>
 </button>
 
-<button>
+<button class ='locations'>
 	<%= link_to "Back to Locations List", locations_path%>
 </button>
 

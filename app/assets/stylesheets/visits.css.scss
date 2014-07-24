@@ -1,3 +1,47 @@
 // Place all the styles related to the visits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: Helvetica, sans-serif;
+	padding: 5px;
+}
+
+button {
+	padding: 10px 10px;
+	border: 0px
+}
+
+.locations{
+	background-color: #2980b9;
+	color: white;
+}
+
+.delete {
+	background-color: #c0392b;
+	color: white;
+}
+
+.visits {
+	background-color: #27ae60;
+
+}
+
+.edit {
+	background-color: #f1c40f;
+}
+
+.save {
+	background-color: #d35400;
+	color: white;
+	border: 0px;
+	padding: 10px;
+}
+
+a {
+	color: white;
+	padding: 10px 10px;
+}
+
+a:visited {
+	color: white;
+}
