@@ -23,6 +23,7 @@ class VisitsController < ApplicationController
 		@visit = @location.visits.new visit_params
 		@visit.save
 		if @visit.save
+			flash[:notice] = "Visit created!"
 			redirect_to action: 'index', controller: 'visits', location_id: @location.id
 		else
 			@errors = @visit.errors.full_messages
@@ -46,7 +47,7 @@ class VisitsController < ApplicationController
 		@visit = @location.visits.find(params[:id])
 		if @visit.update_attributes(visit_params)
 				redirect_to	action: 'show', id: @visit.id
-				flash[:success] = "Visit updated!"
+				flash[:notice] = "Visit updated!"
 		else
 				@errors	=	@visit.errors.full_messages
 				render 'edit'
