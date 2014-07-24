@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-# has_many :visits
+has_many :visits
 
 	validates :user_name, presence: true, length: {maximum: 10}, format: {with: /\A[a-zA-Z0-9]+\z/}
 	validates :password, presence: true

@@ -2,8 +2,8 @@
 
 <%= flash_message %>
 
-Location <%= @visit.location_id %> - 
-Visited by: <%= @visit.user_id %>
+Location: <%= Location.find(@visit.location_id).city %>  -  
+Visited by: <%= User.find(@visit.user_id).user_name  %>
 <br/>
 From: <%= @visit.from_date %></br>
 To: <%= @visit.to_date %></br>

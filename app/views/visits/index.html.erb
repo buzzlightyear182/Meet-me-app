@@ -7,9 +7,9 @@
 	<li>
 		<% if visit.location_id.present? %>
 		 Visit <%= visit.id %> -
-			Location ID <%= visit.location_id %> -
+			Location: <%= Location.find(visit.location_id).city %> -
 		<% end %>
-		User ID <%= visit.user_id %>
+		Username: <%= User.find(visit.user_id).user_name %>
 		<button class = 'visits'>
 		<%= link_to "Go to visit", location_visit_path(:id => visit.id)%>
 	</button>
