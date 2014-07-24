@@ -1,7 +1,9 @@
-<h1>Visit</h1>
-Visit <%= @visit.id %> - Location <%= @visit.location_id %> - 
+<h1>Visit <%= @visit.id %></h1>
+Location <%= @visit.location_id %> - 
 Visited by: <%= @visit.user_name %>
 <br/>
+From: <%= @visit.from_date %></br>
+To: <%= @visit.to_date %></br>
 <button class='delete'>
 	<%= link_to "Delete", location_visit_path(@visit.location, :id => @visit.id), method: 'delete', confirm: 'Are you sure?' %>
 </button>

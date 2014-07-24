@@ -41,17 +41,17 @@ class VisitsController < ApplicationController
 		redirect_to action: 'index'
 	end
 
-	# def update
-	# 	@location = Location.find(params[:location_id])
-	# 	@visit = @location.visits(params[:id])
-	# 	if @visit.update_attributes(params[:visit])
-	# 			redirect_to	action: 'show', id: @visit.id
-	# 			flash[:success] = "Visit updated!"
-	# 	else
-	# 			@errors	=	@visit.errors.full_messages
-	# 			render ‘edit’
-	# 	end
-	# end
+	def update
+		@location = Location.find(params[:location_id])
+		@visit = @location.visits.find(params[:id])
+		if @visit.update_attributes(visit_params)
+				redirect_to	action: 'show', id: @visit.id
+				flash[:success] = "Visit updated!"
+		else
+				@errors	=	@visit.errors.full_messages
+				render 'edit'
+		end
+	end
 
 	private
 
