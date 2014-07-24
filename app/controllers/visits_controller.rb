@@ -2,7 +2,7 @@ class VisitsController < ApplicationController
 
 	def index
 		@location = Location.find(params[:location_id])
-		@visits = Visit.month_visits(7, 2014, params[:location_id])
+		@visits = @location.visits
 	end
 
 	def show
