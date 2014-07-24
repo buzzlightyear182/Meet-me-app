@@ -9,7 +9,7 @@
 		 Visit <%= visit.id %> -
 			Location ID <%= visit.location_id %> -
 		<% end %>
-		Username <%= visit.user_name %>
+		User ID <%= visit.user_id %>
 		<button class = 'visits'>
 		<%= link_to "Go to visit", location_visit_path(:id => visit.id)%>
 	</button>

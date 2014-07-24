@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20140724123529) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
+    t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "city"
     t.integer  "zip_code"
     t.string   "street"
     t.string   "country"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140724123529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "location_id"
-    t.string   "user_name"
+    t.integer  "user_id"
     t.date     "from_date"
     t.date     "to_date"
   end
