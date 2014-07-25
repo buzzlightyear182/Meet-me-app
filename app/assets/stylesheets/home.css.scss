@@ -1,8 +1,73 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.container {
+body {
 	margin: 0 auto;
 	width: 80%;
 	max-width: 1200px;
+}
+
+header {
+	width: 100%;
+	background-color: #1abc9c;
+}
+
+header h1,h2 {
+	margin: auto;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+header h1 {
+	padding-top: 100px;
+	font-size: 48px;
+}
+
+header h2 {
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+#places {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+
+#places li {
+	background-color: #3498db;
+	height: 100px;
+	list-style: none;
+	margin-bottom: 2px;
+
+	width: 100%
+}
+
+#places li p {
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 40px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.mainhome {
+	font-family: 'Oswald', sans-serif;
+	display: inline-block;
+	position: absolute;
+	float: right;
+	background-color: #34495e;
+	color: white;
+	text-align: center;
+	float: right;
+}
+
+.mainhome p {
+	font-size: 36px;
 }

@@ -12,4 +12,8 @@ private
 		end
 	end
 
+	def users_select
+		User.all.collect { |user| [user.user_name, user.id] }
+	end
+
 end

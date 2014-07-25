@@ -1,8 +1,27 @@
-<h1>Welcome to Meet Me!</h1>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 
-<b>Place to tell your friends where they can meet you!</b>
-</br>
-</br>
-<button class = 'locations'>
-	<%= link_to "Check-out Locations", locations_path%>
-</button>
+<header>
+	<h1>Welcome to Meet Me!</h1>
+	<h2>A place to tell your friends where they can meet you!</h2>
+</header>
+<body>
+	<aside>
+		<ul id="places">
+			<li>
+				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
+			</li>
+			<li>
+				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
+			</li>
+			<li>
+				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
+			</li>
+			<li>
+				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
+			</li>
+	</aside>
+	<div class='mainhome'>
+		<p>Where do you want to go?</p>
+	</div>
+</body>
