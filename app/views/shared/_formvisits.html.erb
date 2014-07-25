@@ -1,0 +1,16 @@
+<% if @errors %>
+<ul>
+	<% @errors.each do |error| %>
+	<li> <%= error %> </li>
+	<% end %>
+</ul>
+<% end %>
+
+
+<%= form_for [@location, @visit] do |f| %>
+	<%= f.label :user_id %>
+	<%= f.text_field :user_id %> <br/>
+	<%= f.datetime_select (:from_date) %> <br/>
+	<%= f.datetime_select (:to_date) %> <br/>
+	<%= f.submit "Save", class: "save" %>
+<% end %>

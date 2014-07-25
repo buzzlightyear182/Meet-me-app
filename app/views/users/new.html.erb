@@ -1,19 +1,2 @@
 <h1>Create a new user</h1>
-
-<% if @errors %>
-<ul>
-	<% @errors.each do |error| %>
-	<li> <%= error %> </li>
-	<% end %>
-</ul>
-<% end %>
-
-<%= form_for @user do |f| %>
-	<%= f.label :user_name %>
-	<%= f.text_field :user_name %> <br/>
-	<%= f.label :password %>
-	<%= f.text_field :password %> <br/>
-	<%= f.label :email %>
-	<%= f.text_field :email %> <br/><br/>
-	<%= f.submit "Save", class: "save" %>
-<% end %>
+<%= render '/shared/formusers' %>

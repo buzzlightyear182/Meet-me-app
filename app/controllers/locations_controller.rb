@@ -28,6 +28,21 @@ class LocationsController < ApplicationController
 		end
 	end
 
+	def edit
+		@location = Location.find(params[:id])
+	end
+
+def update
+		@location = Location.find(params[:id])
+		if @location.update_attributes(location_params)
+				redirect_to	action: 'show', id: @location.id
+				flash[:notice] = "Location updated!"
+		else
+				@errors	=	@location.errors.full_messages
+				render 'edit'
+		end
+	end
+
 private
 
 	def location_params
