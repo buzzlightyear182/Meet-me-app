@@ -1,15 +1,46 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-	font-family: Helvetica, sans-serif;
+
+.listindex {
+	width: 120px;
+	height: 120px;
+	display: inline;
+	padding: 0px;
+	margin: auto;
+}
+
+#listcontainer {
+	margin: 0 auto;
+	padding: 10px 0px;
+	background-color: #e67e22;
+}
+
+.index_item{
+	font-family: Lato, sans-serif;
+	border: 2px solid grey;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.listindex li {
+	display: inline-block;
+	text-align: center;
+	margin: 5px;
+	background-color: white;
+}
+
+.listindex p {
 	padding: 5px;
+	margin: 0px;
 }
 
 button {
 	padding: 10px;
 	border: 0px;
 	border-radius: 10px;
+	text-align: center;
+	margin: 10px;
 }
 
 .locations{
@@ -20,6 +51,10 @@ button {
 .delete {
 	background-color: #c0392b;
 	color: white;
+}
+
+.new {
+	background-color: #34495e;
 }
 
 .visits {
@@ -50,4 +85,19 @@ a {
 
 a:visited {
 	color: white;
+}
+
+.solocation p {
+	margin: 0px;
+	padding-top: 20px;
+	color: white;
+}
+
+.solocation {
+	width: 80%;
+	font-family: Lato, sans-serif;
+	margin: 0px auto;
+	padding: 0px;
+	text-align: center;
+	background-color: #f39c12;
 }

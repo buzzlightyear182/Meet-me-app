@@ -1,56 +1,87 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-	margin: 0 auto;
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+#container {
 	width: 80%;
-	max-width: 1200px;
+	margin: 0 auto;
+}
+
+li {
+	list-style: none;
 }
 
 header {
-	width: 100%;
+	margin: auto;
+	margin-top: 20px;
 	background-color: #1abc9c;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
 }
 
-header h1,h2 {
+header h1 {
+	padding-top: 10px;
+	font-size: 48px;
 	margin: auto;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 }
 
-header h1 {
-	padding-top: 100px;
-	font-size: 48px;
-}
-
 header h2 {
 	font-size: 16px;
 	padding-top: 10px;
 	padding-bottom: 20px;
+	margin: auto;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
 }
 
 #places {
 	margin: 0px;
 	padding: 0px;
+	width: 20%;
 	float: left;
+	display: inline-block;
+}
+
+.all {
+	background-color: #f39c12;
+	font-size: 32px;
+	height: 90px;
+	margin: 0px 0px 2px 0px;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	padding: 15px;
+}
+
+.all p {
+	padding-top: 30px;
 }
 
 #places li {
 	background-color: #3498db;
-	height: 100px;
+	height: 60px;
 	list-style: none;
 	margin-bottom: 2px;
-
-	width: 100%
 }
 
 #places li p {
 	text-align: center;
 	margin-top: 0px;
-	padding-top: 40px;
+	padding-top: 10px;
 	font-family: 'Oswald', sans-serif;
-	font-size: 16px;
+	font-size: 24px;
+}
+
+#places li:last-child {
+	border-bottom-left-radius: 50px;
 }
 
 a {
@@ -58,16 +89,27 @@ a {
 }
 
 .mainhome {
-	font-family: 'Oswald', sans-serif;
 	display: inline-block;
-	position: absolute;
-	float: right;
 	background-color: #34495e;
-	color: white;
 	text-align: center;
-	float: right;
+	width: 80%;
+	float: left;
+	height: 430px;
+	border-bottom-right-radius: 50px;
 }
 
 .mainhome p {
 	font-size: 36px;
+	padding-top: 50px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+}
+
+#images img {
+	margin: 0px;
+	display: inline;
+}
+
+.hidden {
+	display: none;
 }

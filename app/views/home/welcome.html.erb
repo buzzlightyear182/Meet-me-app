@@ -1,27 +1,38 @@
 <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 
-<header>
-	<h1>Welcome to Meet Me!</h1>
-	<h2>A place to tell your friends where they can meet you!</h2>
-</header>
 <body>
-	<aside>
-		<ul id="places">
-			<li>
-				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
-			</li>
-			<li>
-				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
-			</li>
-			<li>
-				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
-			</li>
-			<li>
-				<p><%= link_to "CHECK OUT ALL LOCATIONS", locations_path%></p>
-			</li>
-	</aside>
-	<div class='mainhome'>
-		<p>Where do you want to go?</p>
-	</div>
+	<div id = "container">
+			<header>
+				<h1>Welcome to Meet Me!</h1>
+				<h2>A place to tell your friends where they can meet you!</h2>
+			</header>
+			<!-- <div id = "container"> -->
+			<ul id="places">
+					<p class="all"><%= link_to "SEE ALL LOCATIONS", locations_path%></p>
+				<li>
+					<p><%= link_to "Mallorca", location_path(id: 1)%></p>
+				</li>
+				<li>
+					<p><%= link_to "Madrid", location_path(id: 2)%></p>
+				</li>
+				<li>
+					<p><%= link_to "Valencia", location_path(id: 4)%></p>
+				</li>
+				<li>
+					<p><%= link_to "Barcelona", location_path(id: 5)%></p>
+				</li>
+				<li>
+					<p><%= link_to "Ironhack", location_path(id: 3)%></p>
+				</li>
+			</ul>
+		<div class='mainhome'>
+			<p id='subtitle' class=''>So, where do you want to go?</p>
+				<ul id="images">
+					<li class='hidden'><%= image_tag "mallorca_smaller.jpg"%></li>
+					<li class='hidden'><%= image_tag "madrid_small.jpg"%></li>
+					<li class='hidden'><%= image_tag "valencia_small.jpg"%></li>
+					<li class='hidden'><%= image_tag "barcelona_small.jpg"%></li>
+				</ul>
+		</div>
 </body>

@@ -1,25 +1,35 @@
-<h1>Locations</h1>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+<header>
+	<h1>Locations</h1>
+</header>
+<body>
+	<div id="container">
+		<div id="listcontainer">
+			<ul class="listindex">
+				<% @locations.each do |location| %>
+				<li class="index_item">
+					<% if location.name.present? %>
+						<h4><%= location.name %> at
+					<% end %>
+					<%= location.city %></h4>
+					<p class = 'visits'>
+						<%= link_to "See Visits", location_visits_path(location.id) %>
+					</p>
+					<p class = 'locations'>
+						<%= link_to "Check-out Location", location_path(location.id)%>
+					</p>
+					<p class ='edit'>
+					<%= link_to "Edit Location", edit_location_path(location.id), method: 'get' %>
+					</p>
 
-<ul>
-	<% @locations.each do |location| %>
-	<li>
-		<% if location.name.present? %>
-			<%= location.name %> -
-		<% end %>
-		<%= location.city %>
-		<button class = 'visits'>
-			<%= link_to "See Visits", location_visits_path(location.id) %>
-		</button>
-		<button class = 'locations'>
-			<%= link_to "Check-out Location", location_path(location.id)%>
-		</button>
-		<button class ='edit'>
-		<%= link_to "Edit Location", edit_location_path(location.id), method: 'get' %>
-		</button>
-
-		</li>
-	<% end %>
-</ul>
-<button class = 'new'>
-<%= link_to "Create a new location", new_location_path, method: 'get' %>
-</button>
+					</li>
+				<% end %><br>
+			<button class = 'new'>
+			<%= link_to "Create a new location", new_location_path, method: 'get' %>
+			</button>
+		</div>
+	</ul>
+	
+</div>
+</body>
