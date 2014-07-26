@@ -7,7 +7,6 @@
 			User ID: <b><%= user.id %></b> -
 			<%= user.user_name %><br>
 		<% end %>
-
 		<%= user.email %>
 		<button class ='edit'>
 			<%= link_to "Edit", edit_user_path(:id => user.id), method: 'get' %>

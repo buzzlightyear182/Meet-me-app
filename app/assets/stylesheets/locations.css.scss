@@ -2,25 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.listindex {
-	width: 120px;
-	height: 120px;
-	display: inline;
-	padding: 0px;
-	margin: auto;
-}
-
 #listcontainer {
 	margin: 0 auto;
-	padding: 10px 0px;
+	padding: 20px 0px;
 	background-color: #e67e22;
+	width: 100%;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.listindex {
+	padding: 0px;
+	margin: auto;
+	margin-left: 20px;
 }
 
 .index_item{
+	width: 168px;
+	height: 168px;
 	font-family: Lato, sans-serif;
 	border: 2px solid grey;
-	border-radius: 5px;
+	border-radius: 10px;
 	display: inline-block;
+}
+
+.index_item {
+	padding: 10px 0;
 }
 
 .listindex li {
@@ -31,8 +38,13 @@
 }
 
 .listindex p {
-	padding: 5px;
+	padding: 10px 5px;
 	margin: 0px;
+}
+
+.listindex p:last-child {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 button {
@@ -40,7 +52,10 @@ button {
 	border: 0px;
 	border-radius: 10px;
 	text-align: center;
-	margin: 10px;
+	margin: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	color: white;
 }
 
 .locations{
@@ -50,7 +65,6 @@ button {
 
 .delete {
 	background-color: #c0392b;
-	color: white;
 }
 
 .new {
@@ -59,7 +73,6 @@ button {
 
 .visits {
 	background-color: #27ae60;
-
 }
 
 .edit {
