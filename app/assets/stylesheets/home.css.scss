@@ -19,6 +19,7 @@ li {
 header {
 	margin: auto;
 	margin-top: 20px;
+	margin-bottom: 0px;
 	background-color: #1abc9c;
 	border-top-left-radius: 50px;
 	border-top-right-radius: 50px;
@@ -105,9 +106,14 @@ a {
 	font-family: 'Oswald', sans-serif;
 }
 
+#images {
+	padding: 0px;
+	margin:0px;
+}
+
 #images img {
 	margin: 0px;
-	display: inline;
+	border-bottom-right-radius: 50px;
 }
 
 .hidden {
