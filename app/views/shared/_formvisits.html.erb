@@ -6,7 +6,6 @@
 </ul>
 <% end %>
 
-
 <%= form_for [@location, @visit] do |f| %>
 	<%= f.label :user_id %>
 	name<%= f.select(:id, users_select, prompt: 'Who are you?') %></br>

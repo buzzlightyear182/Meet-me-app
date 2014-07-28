@@ -1,0 +1,18 @@
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+<body>
+	<div id = "backpack">
+		<header>
+			<h1>Search Results</h1>
+		</header>
+		<div id="listcontainer">
+			<ul class="listindex">
+				<% puts @search_results %>
+				<% @search_results.each do |search| %>
+				<li class="index_item">
+						<h4><%= search %></h4>
+						<% end %>
+					</li>
+				</ul>
+	</div>
+</body>

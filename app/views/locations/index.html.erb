@@ -28,5 +28,11 @@
 		<button class = 'new'>
 			<%= link_to "Create a new location", new_location_path, method: 'get' %>
 		</button>
+
+		<%= form_for @search do |f| %>
+			<%= f.label :keyword %>
+			<%= f.text_field :keyword %>
+			<%= f.submit 'Search' %>
+		<% end %>
 	</div>
 </body>

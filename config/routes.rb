@@ -15,6 +15,10 @@ end
 
 resources :users
 
+# resource :search, :only => :create
+
+post 'search' => 'search#create'
+
 # get 'locations' => 'locations#index'
 # get 'locations/:id' => 'locations#show'
 
