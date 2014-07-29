@@ -1,7 +1,9 @@
 class Location < ActiveRecord::Base
 	has_many :visits
 	has_many :comments
-	accepts_nested_attributes_for :comments
+	accepts_nested_attributes_for :comments,
+	:allow_destroy => true,
+	reject_if: proc { |attributes| attributes['text_note'].blank?}
 
 	validates :name, presence: true, length: {maximum: 30}
 	validates :name, format: {with: /\A[a-zA-Z]+\z/} #alphanumeric regex

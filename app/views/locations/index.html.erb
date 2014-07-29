@@ -8,7 +8,7 @@
 		<div id="listcontainer">
 			<ul class="listindex">
 				<% @locations.each do |location| %>
-				<li class="index_item">
+				<li class="index_item <%= cycle("dark","dark", "light") %>">
 					<% if location.name.present? %>
 						<h4><%= location.name %> at
 					<% end %>

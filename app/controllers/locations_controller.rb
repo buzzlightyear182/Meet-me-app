@@ -9,6 +9,7 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+		@comments = @location.comments
 	rescue ActiveRecord::RecordNotFound
 		render plain: 'Sorry, not found', status: 404 unless @location
 	end
@@ -32,6 +33,7 @@ class LocationsController < ApplicationController
 
 	def edit
 		@location = Location.find(params[:id])
+		@location.comments.build
 	end
 
 def update
@@ -48,7 +50,7 @@ def update
 private
 
 	def location_params
-		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text_note]) #comments_attributes :id is ID of comments
+		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text_note, :_destroy]) #comments_attributes :id is ID of comments
 	end
 
 end

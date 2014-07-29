@@ -7,8 +7,12 @@
 <body>
 <div class="solocation">
 	<p><%= @location.name %>:
-	<%= @location.city %>, <%= @location.country%>
-</p>
+		<%= @location.city %>, <%= @location.country%>
+	</p>
+	<p><% @comments.each do |comment| %>Comments
+		<%= comment.id %> - <%= comment.text_note %>
+		<% end %>
+	</p>
 <button class ='visits'>
 	<%= link_to "See Visits", location_visits_path(@location.id) %>
 </button>

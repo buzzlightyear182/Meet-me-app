@@ -30,11 +30,20 @@
 	padding: 10px 0;
 }
 
+.dark {
+	background-color: grey;
+	color: white;
+}
+
+.light {
+	background-color: yellow;
+}
+
 .listindex li {
 	display: inline-block;
 	text-align: center;
 	margin: 5px;
-	background-color: white;
+	// background-color: white;
 }
 
 .listindex p {
