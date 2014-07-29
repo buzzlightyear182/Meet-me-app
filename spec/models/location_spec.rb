@@ -22,8 +22,8 @@ RSpec.describe Location, :type => :model do
 
 	it "Count_visits method returns number of total visit in that month and year" do
 		location1 = Location.create name:'Beach', city: 'Mallorca', country: 'Spain'
-		Visit.create location_id: location1.id, user_name: "Jane", from_date: Date.today, to_date: Date.today+3
-		Visit.create location_id: location1.id, user_name: "Edu", from_date: Date.today+10, to_date: Date.today+23
+		Visit.create location_id: location1.id, user_id: 1, from_date: Date.today, to_date: Date.today+3
+		Visit.create location_id: location1.id, user_id: 2, from_date: Date.today+10, to_date: Date.today+23
 		expect(Location.count_visits(8,2014,location1.id)).to eq(1)
 	end
 

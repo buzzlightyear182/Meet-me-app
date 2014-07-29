@@ -19,6 +19,10 @@ resources :users
 
 post 'search' => 'search#create'
 
+resources :locations do
+  resources :comments
+end
+
 # get 'locations' => 'locations#index'
 # get 'locations/:id' => 'locations#show'
 

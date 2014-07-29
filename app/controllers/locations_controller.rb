@@ -15,11 +15,12 @@ class LocationsController < ApplicationController
 
 	def new
 		@location = Location.new
+		@location.comments.build
+		#build is same as @comment = Comment.new then @comment.location = location
 	end
 
 	def create
 		@location = Location.new location_params
-		@location.save
 		if @location.save
 			flash[:notice] = "Location created!"
 			redirect_to action:'index', controller:'locations'
@@ -47,7 +48,7 @@ def update
 private
 
 	def location_params
-		params.require(:location).permit(:name, :city, :country)
+		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text_note]) #comments_attributes :id is ID of comments
 	end
 
 end

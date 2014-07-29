@@ -13,5 +13,11 @@
 	<%= f.text_field :city %> <br/>
 	<%= f.label :country %>
 	<%= f.text_field :country %> <br/><br/>
+
+	<%= f.fields_for :comments do |c| %>
+		<%= c.hidden_field :id %> <!-- ID of comment -->
+		<%= c.label :text_note %>
+		<%= c.text_field :text_note %>
+		<% end %>
 	<%= f.submit "Save", class: "save" %>
 <% end %>
