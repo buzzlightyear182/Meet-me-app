@@ -1,38 +1,38 @@
-<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-<body>
-	<div id = "backpack">
-		<header>
-			<h1>Locations</h1>
-		</header>
-		<div id="listcontainer">
-			<ul class="listindex">
-				<% @locations.each do |location| %>
-				<li class="index_item <%= cycle("dark","dark", "light") %>">
-					<% if location.name.present? %>
-						<h4><%= location.name %> at
-					<% end %>
-					<%= location.city %></h4>
-					<p class = 'visits'>
-						<%= link_to "See Visits", location_visits_path(location.id) %>
-					</p>
-					<p class = 'locations'>
-						<%= link_to "Check-out Location", location_path(location.id)%>
-					</p>
-					<p class ='edit'>
-					<%= link_to "Edit Location", edit_location_path(location.id), method: 'get' %>
-					</p>
-				</li>
+<div id = "backpack">
+	<header>
+		<h1>Locations</h1>
+	</header>
+	<div id="listcontainer">
+		<ul class="listindex">
+			<% @locations.each do |location| %>
+			<li class="index_item <%= cycle("dark","dark", "light") %>">
+				<% if location.name.present? %>
+					<h4><%= location.name %> at
 				<% end %>
-			</ul>
-		<button class = 'new'>
-			<%= link_to "Create a new location", new_location_path, method: 'get' %>
-		</button>
+				<%= location.city %></h4>
+				<p class = 'visits'>
+					<%= link_to "See Visits", location_visits_path(location.id) %>
+				</p>
+				<p class = 'locations'>
+					<%= link_to "Check-out Location", location_path(location.id)%>
+				</p>
+				<p class ='edit'>
+				<%= link_to "Edit Location", edit_location_path(location.id), method: 'get' %>
+				</p>
+			</li>
+			<% end %>
+		</ul>
+	<button class = 'new'>
+		<%= link_to "Create a new location", new_location_path, method: 'get' %>
+	</button>
 
-		<%= form_for @search do |f| %>
-			<%= f.label :keyword %>
-			<%= f.text_field :keyword %>
-			<%= f.submit 'Search' %>
-		<% end %>
-	</div>
-</body>
+	<%= form_for @search do |f| %>
+		<%= f.label :keyword %>
+		<%= f.text_field :keyword %>
+		<%= f.submit 'Search' %>
+	<% end %>
+</div>
+
+<% content_for :title do %>
+	<h1>This is the Meet Me app! Locations</h1>
+<% end %>
