@@ -1,3 +1,5 @@
+require 'pry'
+
 class Location < ActiveRecord::Base
 	has_many :visits
 	has_many :comments
@@ -23,6 +25,7 @@ class Location < ActiveRecord::Base
 
 	def self.count_visits(month, year, value)
 		location = Location.find(value)
+		binding.pry
 		location.visits.where('extract(month from from_date) = ?', month).where('extract(year from from_date) = ?', year).count
 	end
 

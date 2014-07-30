@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Visit, :type => :model do
 
-	it "from_date, to_date and user_name is present" do
+	it "from_date, to_date and user_id is present" do
+		visit = create(:visit)
+		expect(visit.valid?).to eq(true)
+	end
+
+	it "from_date, to_date and user_id is present" do
 		item = Visit.new
 		expect(item.valid?).to eq(false)
 	end
