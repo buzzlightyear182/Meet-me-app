@@ -36,14 +36,14 @@ class LocationsController < ApplicationController
 		@location.comments.build
 	end
 
-def update
+	def update
 		@location = Location.find(params[:id])
 		if @location.update_attributes(location_params)
-				redirect_to	action: 'show', id: @location.id
-				flash[:notice] = "Location updated!"
+			redirect_to	action: 'show', id: @location.id
+			flash[:notice] = "Location updated!"
 		else
-				@errors	=	@location.errors.full_messages
-				render 'edit'
+			@errors	=	@location.errors.full_messages
+			render 'edit'
 		end
 	end
 

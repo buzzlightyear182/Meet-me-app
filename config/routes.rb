@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 resources :locations do
   resources :visits
+  resources :comments
 end
 
 resources :users
@@ -19,9 +20,6 @@ resources :users
 
 post 'search' => 'search#create'
 
-resources :locations do
-  resources :comments
-end
 
 # get 'locations' => 'locations#index'
 # get 'locations/:id' => 'locations#show'
