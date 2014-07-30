@@ -3,12 +3,9 @@ require 'rails_helper'
 RSpec.describe Location, :type => :model do
 
 	it "Iron Find method returns entry of id number entered" do
-		item = Location.new
-		item.name = "Favorite"
-		item.city = "Barcelona"
-		item.country = "Spain"
-		item.save
-		expect(Location.find(item.id)).to eq(Location.iron_find(item.id))
+
+		location = create(:location)
+		expect(Location.find(location.id)).to eq(Location.iron_find(location.id))
 	end
 
 	it "In_spain? method returns all places in Spain" do
