@@ -18,14 +18,13 @@ class LocationsController < ApplicationController
 
 	def new
 		@location = Location.new
-		@location.user_id = current_user.id
 		@location.comments.build
 		#build is same as @comment = Comment.new then @comment.location = location
 	end
 
 	def create
 		@location = Location.new location_params
-		@location.user_id = current_user.id
+		@location.user = current_user
 		if @location.save
 			flash[:notice] = "Location created!"
 			redirect_to action:'index', controller:'locations'
@@ -37,13 +36,15 @@ class LocationsController < ApplicationController
 
 	def edit
 		@location = Location.find(params[:id])
-		@location.user_id = current_user.id
 		@location.comments.build
+		if @location.user != current_user
+			redirect_to	action: 'index'
+			flash[:alert] = "You can not edit a location if you are not the creator"
+		end		
 	end
 
 	def update
 		@location = Location.find(params[:id])
-		@location.user_id = current_user.id
 		if @location.update_attributes(location_params)
 			redirect_to	action: 'show', id: @location.id
 			flash[:notice] = "Location updated!"
@@ -56,7 +57,7 @@ class LocationsController < ApplicationController
 private
 
 	def location_params
-		params.require(:location).permit(:name, :city, :country,:user_id => current_user.id, comments_attributes: [:id, :text_note, :_destroy]) #comments_attributes :id is ID of comments
+		params.require(:location).permit(:name, :city, :country,:user_id, comments_attributes: [:id, :text_note, :_destroy]) #comments_attributes :id is ID of comments
 	end
 
 end

@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'pry', group: [:test, :development]
 
+gem 'capybara', group: [:test, :development]
+
 gem 'factory_girl_rails', group: [:test, :development]
 
 gem 'devise'
