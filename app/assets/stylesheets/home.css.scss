@@ -7,6 +7,29 @@ html, body {
 	margin: 0;
 }
 
+section .userbar{
+	width: 80%;
+	background-color: #8e44ad;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	padding: 10px;
+	margin: auto;
+	display: inline;
+}
+
+.userbar div {
+	display: inline;
+}
+
+.notloggedin form {
+	display: inline;
+}
+
+.logout {
+	text-align: right;
+	color: black;
+}
+
 #backpack {
 	width: 80%;
 	margin: 0 auto;

@@ -9,18 +9,27 @@
 	<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<section class="userbar">
+		<nav>
+			<% if user_signed_in? %>
+				<div class="loggedin">
+				Welcome <%= current_user.user_name %>
+				<%= link_to "Logout?", destroy_user_session_path, method: 'delete', confirm: 'Are you sure?' %>
+				</div>
+			<% else %>
+				<div class="notloggedin">
+				<%= link_to "Sign-up now", new_user_registration_path, method: 'get' %>
+				<%= render '/shared/formdeviselogin' %>
+				</div>
+			<% end %>
+		</nav>
+	</section>
 
-	<nav>
-		<% if user_signed_in? %>
-			Welcome <%= current_user.user_name %>
-		<% end %>
-	</nav>
-
-<article class="container">
-	<%= yield(:title) || "Default title" %>
-	<%= flash_message %>
-	<%= yield %>
-</article>
+	<article class="container">
+		<%= yield(:title) || "Default title" %>
+		<%= flash_message %>
+		<%= yield %>
+	</article>
 
 </body>
 </html>
