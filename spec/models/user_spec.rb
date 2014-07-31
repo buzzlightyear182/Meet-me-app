@@ -7,6 +7,12 @@ RSpec.describe User, :type => :model do
 		expect(user.valid?).to eq(false)
 	end
 
+	it "User is valid?" do
+		user = User.new user_name:"Jane", password: '123', email: "jane.buzzlightyear@gmail.com"
+		expect(user.valid?).to eq(false)
+	end
+
+
 	it "Email format is not correct" do
 		user = User.new
 		user.email = "we_love_chocolate"
@@ -28,7 +34,7 @@ RSpec.describe User, :type => :model do
 	it "Create a new user" do
 		user = User.new
 		user.user_name = "benja83"
-		user.encrypted_password="Ben"
+		user.password="12345678"
 		user.email = "bentarenne@gmail.com"
 		expect(user.valid?).to eq(true)
 	end

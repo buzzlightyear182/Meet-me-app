@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 has_many :visits
+has_many :locations
+
 
 	validates :user_name, presence: true, length: {maximum: 10}, format: {with: /\A[a-zA-Z0-9]+\z/}
 	validates :encrypted_password, presence: true
