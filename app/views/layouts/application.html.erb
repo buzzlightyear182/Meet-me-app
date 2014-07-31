@@ -10,6 +10,12 @@
 </head>
 <body>
 
+	<nav>
+		<% if user_signed_in? %>
+			Welcome <%= current_user.user_name %>
+		<% end %>
+	</nav>
+
 <article class="container">
 	<%= yield(:title) || "Default title" %>
 	<%= flash_message %>

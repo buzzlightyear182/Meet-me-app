@@ -25,4 +25,12 @@ RSpec.describe User, :type => :model do
 		expect(user.valid?).to eq(false)
 	end
 
+	it "Create a new user" do
+		user = User.new
+		user.user_name = "benja83"
+		user.encrypted_password="Ben"
+		user.email = "bentarenne@gmail.com"
+		expect(user.valid?).to eq(true)
+	end
+
 end

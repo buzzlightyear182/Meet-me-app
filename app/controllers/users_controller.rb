@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 				redirect_to	action: 'index'
 				flash[:notice] = "User updated!"
 		else
-				@errors	=	@visit.errors.full_messages
+				@errors	=	@user.errors.full_messages
 				render 'edit'
 		end
 	end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 private
 
 	def user_params
-		params.require(:user).permit(:user_name, :password, :email)
+		params.require(:user).permit(:user_name, :password, :password_confirmation, :email)
 	end
 
 end

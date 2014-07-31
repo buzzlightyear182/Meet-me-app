@@ -1,5 +1,7 @@
 class VisitsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
 		@location = Location.find(params[:location_id])
 		@visits = @location.visits
