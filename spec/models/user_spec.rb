@@ -12,7 +12,6 @@ RSpec.describe User, :type => :model do
 		expect(user.valid?).to eq(false)
 	end
 
-
 	it "Email format is not correct" do
 		user = User.new
 		user.email = "we_love_chocolate"

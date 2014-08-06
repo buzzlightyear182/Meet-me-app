@@ -7,6 +7,11 @@ class LocationsController < ApplicationController
 		@search = Search.new
 		# @locations = Location.last_created(7)
 		# @locations = Location.in_spain?
+
+		respond_to do |format|
+			format.html
+			format.json { render :json => @locations.to_json}
+		end
 	end
 
 	def show
